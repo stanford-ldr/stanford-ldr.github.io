@@ -57,6 +57,20 @@
 
   .navbar-brand {
     color: var(--global-text-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--global-font-serif);
+
+    .brand-logo {
+      height: 1.65rem;
+      width: auto;
+      display: block;
+    }
+
+    .brand-text {
+      line-height: 1.2;
+    }
   }
 
   .navbar-nav .nav-item .nav-link {

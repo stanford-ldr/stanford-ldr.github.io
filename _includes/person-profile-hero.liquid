@@ -1,0 +1,39 @@
+{% comment %}
+Reusable profile header for people pages.
+Expected front matter fields:
+- photo: /assets/img/path
+- role: short title/position
+- affiliation: institution or lab
+- website: optional profile web link
+- email: optional contact email
+{% endcomment %}
+
+<section class="person-profile-hero">
+  <div class="person-profile-hero__media">
+    {% if page.photo %}
+      <img
+        class="person-profile-hero__photo"
+        src="{{ page.photo | relative_url }}"
+        alt="{{ page.title }}"
+        loading="lazy"
+      />
+    {% endif %}
+  </div>
+  <div class="person-profile-hero__content">
+    {% if page.role %}
+      <p class="person-profile-hero__role">{{ page.role }}</p>
+    {% endif %}
+    {% if page.affiliation %}
+      <p class="person-profile-hero__affiliation">{{ page.affiliation }}</p>
+    {% endif %}
+    <div class="person-profile-hero__actions">
+      {% if page.website %}
+        <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer">Webpage</a>
+      {% endif %}
+      {% if page.email %}
+        <a href="mailto:{{ page.email }}">Contact</a>
+      {% endif %}
+    </div>
+    <a class="person-profile-hero__back" href="{% link _pages/profiles.md %}">Back to all people</a>
+  </div>
+</section>

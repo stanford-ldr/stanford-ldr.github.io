@@ -1,13 +1,22 @@
 /*******************************************************************************
  * Variables used throughout the theme.
  * To adjust anything, simply edit the variables below and rebuild the theme.
+ * Stanford Identity: https://identity.stanford.edu/design-elements/color/
  ******************************************************************************/
 
 @use "sass:color";
 
-// Colors
-$red-color: #ff3636 !default;
-$red-color-dark: #b71c1c !default;
+// Stanford Identity colors (primary palette)
+$stanford-cardinal: #8c1515 !default; // Cardinal red – primary
+$stanford-cardinal-light: #b83a4b !default;
+$stanford-cardinal-dark: #820000 !default;
+$stanford-black: #2e2d29 !default; // Stanford black (cool black)
+$stanford-cool-grey: #53565a !default; // Cool grey 11
+$stanford-white: #ffffff !default;
+
+// Theme colors (Stanford-aligned; legacy names kept for compatibility)
+$red-color: $stanford-cardinal !default;
+$red-color-dark: $stanford-cardinal-dark !default;
 $orange-color: #f29105 !default;
 $blue-color: #0076df !default;
 $blue-color-dark: #00369f !default;
@@ -18,19 +27,19 @@ $green-color-lime: #b7d12a !default;
 $green-color-dark: #009f06 !default;
 $green-color-light: #ddffdd !default;
 $green-color-bright: #11d68b !default;
-$purple-color: #b509ac !default;
-$light-purple-color: color.adjust($purple-color, $lightness: 25%);
+$purple-color: $stanford-cardinal !default; // Use Cardinal as theme accent
+$light-purple-color: $stanford-cardinal-light !default;
 $pink-color: #f92080 !default;
 $pink-color-light: #ffdddd !default;
 $yellow-color: #efcc00 !default;
 
-$grey-color: #828282 !default;
-$grey-color-light: color.adjust($grey-color, $lightness: 40%);
-$grey-color-dark: #1c1c1d;
+$grey-color: $stanford-cool-grey !default;
+$grey-color-light: color.adjust($stanford-cool-grey, $lightness: 35%);
+$grey-color-dark: $stanford-black !default;
 $grey-900: #212529;
 
-$white-color: #ffffff !default;
-$black-color: #000000 !default;
+$white-color: $stanford-white !default;
+$black-color: $stanford-black !default;
 
 // Theme colors
 
