@@ -37,6 +37,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/resources/";
           },
+        },{id: "nav-language-generation-day",
+          title: "Language Generation Day",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/language-generation-day/";
+          },
         },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
