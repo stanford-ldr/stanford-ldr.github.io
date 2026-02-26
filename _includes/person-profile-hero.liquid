@@ -1,11 +1,11 @@
 {% comment %}
-Reusable profile header for people pages.
-Expected front matter fields:
-- photo: /assets/img/path
-- role: short title/position
-- affiliation: institution or lab
-- website: optional profile web link
-- email: optional contact email
+  Reusable profile header for people pages.
+  Expected front matter fields:
+  - photo: /assets/img/path
+  - role: short title/position
+  - affiliation: institution or lab
+  - website: optional profile web link
+  - email: optional contact email
 {% endcomment %}
 
 <section class="person-profile-hero">
@@ -16,7 +16,7 @@ Expected front matter fields:
         src="{{ page.photo | relative_url }}"
         alt="{{ page.title }}"
         loading="lazy"
-      />
+      >
     {% endif %}
   </div>
   <div class="person-profile-hero__content">

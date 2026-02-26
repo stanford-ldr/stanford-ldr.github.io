@@ -137,6 +137,7 @@ _styles: |
         </p>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -181,6 +182,7 @@ _styles: |
         </p>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -309,5 +311,6 @@ _styles: |
         </p>
       </div>
     </article>
+
   </div>
 </section>

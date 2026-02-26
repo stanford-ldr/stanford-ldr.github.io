@@ -27,7 +27,7 @@ This framework achieves state-of-the-art execution accuracy on the BIRD benchmar
 
 Paper: [https://arxiv.org/abs/2410.01943](https://arxiv.org/abs/2410.01943)
 
-* * *
+---
 
 ## SPRINT: Enabling Interleaved Planning and Parallelized Execution in Reasoning Models
 
@@ -37,7 +37,7 @@ This approach not only streamlines model performance on complex problems but als
 
 Paper: [https://arxiv.org/abs/2506.05745](https://arxiv.org/abs/2506.05745)
 
-* * *
+---
 
 ## StorySage: Conversational Autobiography Writing Powered by a Multi-Agent Framework
 
@@ -46,7 +46,7 @@ By engaging users naturally and iteratively, the system collects and organizes t
 
 Paper: [https://arxiv.org/abs/2506.14159](https://arxiv.org/abs/2506.14159)
 
-* * *
+---
 
 ## MAGNOLIA: Matching Algorithms via GNNs (ICML 2024)
 
@@ -55,7 +55,7 @@ We train a GNN to estimate VTG and show empirically that this GNN returns high-w
 
 Paper: [https://arxiv.org/abs/2406.05959](https://arxiv.org/abs/2406.05959)
 
-* * *
+---
 
 ## A Local Limits Perspective on GNNs
 

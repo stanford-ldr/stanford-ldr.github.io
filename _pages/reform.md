@@ -174,6 +174,7 @@ _styles: |
 </div>
 
 {% if site.data.reform_people and site.data.reform_people.size > 0 %}
+
 <section class="reform-section">
   <h2 id="people">People involved</h2>
 

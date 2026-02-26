@@ -1,21 +1,21 @@
 <!doctype html>
 <html lang="{{ site.lang }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if page.redirect %}
-    {% if page.redirect contains '://' %}
-      {% assign redirect_url = page.redirect %}
-    {% else %}
-      {% assign redirect_url = page.redirect | relative_url %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.redirect %}
+      {% if page.redirect contains '://' %}
+        {% assign redirect_url = page.redirect %}
+      {% else %}
+        {% assign redirect_url = page.redirect | relative_url %}
+      {% endif %}
+      <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
+      <title>Redirecting...</title>
     {% endif %}
-  <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
-  <title>Redirecting...</title>
-  {% endif %}
-</head>
-<body>
-  {% if page.redirect %}
-  <p>Redirecting to <a href="{{ redirect_url }}">Language Generation Day</a>...</p>
-  {% endif %}
-</body>
+  </head>
+  <body>
+    {% if page.redirect %}
+      <p>Redirecting to <a href="{{ redirect_url }}">Language Generation Day</a>...</p>
+    {% endif %}
+  </body>
 </html>

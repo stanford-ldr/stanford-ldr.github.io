@@ -1,1380 +1,1449 @@
-<!doctype html> 
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- SEO -->
-  <title>Language Generation Day @ Stanford</title>
-  <meta name="description" content="A day-long workshop on language generation in the limit." />
+    <!-- SEO -->
+    <title>Language Generation Day @ Stanford</title>
+    <meta name="description" content="A day-long workshop on language generation in the limit." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Language Generation Day @ Stanford" />
-  <meta property="og:description" content="Workshop on language generation in the limit. March 6, 2026." />
-  <meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Language Generation Day @ Stanford" />
+    <meta property="og:description" content="Workshop on language generation in the limit. March 6, 2026." />
+    <meta property="og:type" content="website" />
 
-  <style>
-    :root{
-      --bg: #FFFFFF;
-      --surface: #FFFFFF;
-      --text: #2E2D29;
-      --muted: #5F574F;
-      --border: #E5E5E0;
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --text: #2e2d29;
+        --muted: #5f574f;
+        --border: #e5e5e0;
 
-      --cardinal: #8C1515;
-      --cardinal-dark: #820000;
-      --cardinal-light: #B83A4B;
+        --cardinal: #8c1515;
+        --cardinal-dark: #820000;
+        --cardinal-light: #b83a4b;
 
-      --link: #8C1515;
+        --link: #8c1515;
 
-      --btn-primary-bg: #8C1515;
-      --btn-primary-text: #FFFFFF;
-      --btn-primary-hover: #820000;
+        --btn-primary-bg: #8c1515;
+        --btn-primary-text: #ffffff;
+        --btn-primary-hover: #820000;
 
-      --btn-secondary-border: #8C1515;
-      --btn-secondary-text: #8C1515;
+        --btn-secondary-border: #8c1515;
+        --btn-secondary-text: #8c1515;
 
-      --callout-bg: #FFF7F7;
+        --callout-bg: #fff7f7;
 
-      --font-body: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      --font-head: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        --font-body: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        --font-head: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 
-      --fs-base: 16px;
-      --fs-h1: 44px;
-      --fs-h2: 28px;
-      --fs-h3: 20px;
+        --fs-base: 16px;
+        --fs-h1: 44px;
+        --fs-h2: 28px;
+        --fs-h3: 20px;
 
-      --lh-body: 1.55;
-      --lh-head: 1.15;
+        --lh-body: 1.55;
+        --lh-head: 1.15;
 
-      --maxw: 1100px;
-      --gutter: 20px;
-      --py: 56px;
+        --maxw: 1100px;
+        --gutter: 20px;
+        --py: 56px;
 
-      --radius: 14px;
-      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+        --radius: 14px;
+        --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 
-      --nav-h: 64px;
-    }
+        --nav-h: 64px;
+      }
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: auto; }
-    body{
-      margin: 0;
-      font-family: var(--font-body);
-      font-size: var(--fs-base);
-      line-height: var(--lh-body);
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: auto;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: var(--fs-base);
+        line-height: var(--lh-body);
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+      }
 
-    .skip-link{
-      position: absolute;
-      left: 12px;
-      top: 12px;
-      padding: 10px 12px;
-      border-radius: 10px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      color: var(--text);
-      text-decoration: none;
-      transform: translateY(-140%);
-      transition: transform 160ms ease;
-      z-index: 9999;
-    }
-    .skip-link:focus{
-      transform: translateY(0);
-      outline: 3px solid rgba(184,58,75,0.25);
-      outline-offset: 2px;
-    }
+      .skip-link {
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        color: var(--text);
+        text-decoration: none;
+        transform: translateY(-140%);
+        transition: transform 160ms ease;
+        z-index: 9999;
+      }
+      .skip-link:focus {
+        transform: translateY(0);
+        outline: 3px solid rgba(184, 58, 75, 0.25);
+        outline-offset: 2px;
+      }
 
-    a{ color: var(--link); }
-    a:hover{ color: var(--cardinal-dark); }
-    a:focus-visible, button:focus-visible, input:focus-visible{
-      outline: 3px solid rgba(184,58,75,0.30);
-      outline-offset: 2px;
-      border-radius: 10px;
-    }
+      a {
+        color: var(--link);
+      }
+      a:hover {
+        color: var(--cardinal-dark);
+      }
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible {
+        outline: 3px solid rgba(184, 58, 75, 0.3);
+        outline-offset: 2px;
+        border-radius: 10px;
+      }
 
-    .top-stripe{
-      height: 10px;
-      background: linear-gradient(90deg, var(--cardinal), var(--cardinal-dark));
-    }
-    .hero-backdrop{
-      background:
-        radial-gradient(900px 420px at 15% 10%, rgba(140,21,21,0.10), transparent 60%),
-        radial-gradient(700px 380px at 85% 15%, rgba(184,58,75,0.10), transparent 60%),
-        linear-gradient(180deg, rgba(140,21,21,0.06), transparent 45%);
-      border-bottom: 1px solid var(--border);
-    }
+      .top-stripe {
+        height: 10px;
+        background: linear-gradient(90deg, var(--cardinal), var(--cardinal-dark));
+      }
+      .hero-backdrop {
+        background:
+          radial-gradient(900px 420px at 15% 10%, rgba(140, 21, 21, 0.1), transparent 60%),
+          radial-gradient(700px 380px at 85% 15%, rgba(184, 58, 75, 0.1), transparent 60%),
+          linear-gradient(180deg, rgba(140, 21, 21, 0.06), transparent 45%);
+        border-bottom: 1px solid var(--border);
+      }
 
-    .container{
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 var(--gutter);
-    }
+      .container {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 var(--gutter);
+      }
 
-    header{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav{
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav {
+        height: var(--nav-h);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
 
-    .brand{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 220px;
-    }
-    .seal{
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--cardinal), var(--cardinal-dark));
-      display: grid;
-      place-items: center;
-      color: white;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      box-shadow: 0 10px 24px rgba(140,21,21,0.18);
-      overflow: hidden;
-    }
-    .seal img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block; /* change from none to block */
-    }
-    .brand-title{
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-    .brand-title strong{ font-size: 14px; }
-    .brand-title span{ font-size: 12px; color: var(--muted); }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 220px;
+      }
+      .seal {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, var(--cardinal), var(--cardinal-dark));
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        box-shadow: 0 10px 24px rgba(140, 21, 21, 0.18);
+        overflow: hidden;
+      }
+      .seal img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block; /* change from none to block */
+      }
+      .brand-title {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
+      .brand-title strong {
+        font-size: 14px;
+      }
+      .brand-title span {
+        font-size: 12px;
+        color: var(--muted);
+      }
 
-    nav ul{
-      display: none;
-      list-style: none;
-      gap: 18px;
-      margin: 0;
-      padding: 0;
-      align-items: center;
-    }
-    nav a{
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 14px;
-      padding: 10px 10px;
-      border-radius: 999px;
-    }
-    nav a:hover{ color: var(--text); background: rgba(140,21,21,0.06); }
-    nav a[aria-current="true"]{
-      color: var(--cardinal-dark);
-      background: rgba(140,21,21,0.10);
-    }
+      nav ul {
+        display: none;
+        list-style: none;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+      }
+      nav a {
+        text-decoration: none;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 14px;
+        padding: 10px 10px;
+        border-radius: 999px;
+      }
+      nav a:hover {
+        color: var(--text);
+        background: rgba(140, 21, 21, 0.06);
+      }
+      nav a[aria-current="true"] {
+        color: var(--cardinal-dark);
+        background: rgba(140, 21, 21, 0.1);
+      }
 
-    .nav-actions{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-    .btn{
-      appearance: none;
-      border: 1px solid transparent;
-      background: transparent;
-      padding: 10px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      white-space: nowrap;
-      user-select: none;
-    }
-    .btn.primary{
-      background: var(--btn-primary-bg);
-      color: var(--btn-primary-text);
-      border-color: var(--btn-primary-bg);
-      box-shadow: 0 10px 22px rgba(140,21,21,0.18);
-    }
-    .btn.primary:hover{ background: var(--btn-primary-hover); border-color: var(--btn-primary-hover); }
-    .btn.secondary{
-      border-color: var(--btn-secondary-border);
-      color: var(--btn-secondary-text);
-      background: rgba(140,21,21,0.04);
-    }
-    .btn.secondary:hover{ background: rgba(140,21,21,0.08); }
-    .btn:disabled, .btn[aria-disabled="true"]{
-      opacity: 0.55;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
+      .btn {
+        appearance: none;
+        border: 1px solid transparent;
+        background: transparent;
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        white-space: nowrap;
+        user-select: none;
+      }
+      .btn.primary {
+        background: var(--btn-primary-bg);
+        color: var(--btn-primary-text);
+        border-color: var(--btn-primary-bg);
+        box-shadow: 0 10px 22px rgba(140, 21, 21, 0.18);
+      }
+      .btn.primary:hover {
+        background: var(--btn-primary-hover);
+        border-color: var(--btn-primary-hover);
+      }
+      .btn.secondary {
+        border-color: var(--btn-secondary-border);
+        color: var(--btn-secondary-text);
+        background: rgba(140, 21, 21, 0.04);
+      }
+      .btn.secondary:hover {
+        background: rgba(140, 21, 21, 0.08);
+      }
+      .btn:disabled,
+      .btn[aria-disabled="true"] {
+        opacity: 0.55;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
 
-    .hamburger{
-      display: inline-flex;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    .hamburger:hover{ border-color: rgba(140,21,21,0.25); }
-    .hamburger svg{ width: 22px; height: 22px; }
+      .hamburger {
+        display: inline-flex;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .hamburger:hover {
+        border-color: rgba(140, 21, 21, 0.25);
+      }
+      .hamburger svg {
+        width: 22px;
+        height: 22px;
+      }
 
-    .drawer-overlay{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
-      display: none;
-      z-index: 60;
-    }
-    .drawer{
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: min(420px, 92vw);
-      background: var(--surface);
-      border-left: 1px solid var(--border);
-      box-shadow: -14px 0 30px rgba(0,0,0,0.16);
-      transform: translateX(102%);
-      transition: transform 240ms ease;
-      z-index: 70;
-      display: flex;
-      flex-direction: column;
-    }
-    .drawer header{
-      position: sticky;
-      top: 0;
-      backdrop-filter: none;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 16px;
-      z-index: 1;
-    }
-    .drawer-title{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-    .drawer-title strong{ font-size: 14px; }
-    .drawer-close{
-      width: 42px; height: 42px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-    }
-    .drawer-close:hover{ border-color: rgba(140,21,21,0.25); }
-    .drawer nav{
-      padding: 16px;
-    }
-    .drawer nav a{
-      display: block;
-      padding: 12px 12px;
-      border-radius: 12px;
-      color: var(--text);
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .drawer nav a:hover{ background: rgba(140,21,21,0.06); }
-    .drawer .drawer-actions{
-      padding: 0 16px 18px 16px;
-      display: grid;
-      gap: 10px;
-    }
-    .drawer-open .drawer-overlay{ display: block; }
-    .drawer-open .drawer{ transform: translateX(0); }
+      .drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        display: none;
+        z-index: 60;
+      }
+      .drawer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(420px, 92vw);
+        background: var(--surface);
+        border-left: 1px solid var(--border);
+        box-shadow: -14px 0 30px rgba(0, 0, 0, 0.16);
+        transform: translateX(102%);
+        transition: transform 240ms ease;
+        z-index: 70;
+        display: flex;
+        flex-direction: column;
+      }
+      .drawer header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: none;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 14px 16px;
+        z-index: 1;
+      }
+      .drawer-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .drawer-title strong {
+        font-size: 14px;
+      }
+      .drawer-close {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+      }
+      .drawer-close:hover {
+        border-color: rgba(140, 21, 21, 0.25);
+      }
+      .drawer nav {
+        padding: 16px;
+      }
+      .drawer nav a {
+        display: block;
+        padding: 12px 12px;
+        border-radius: 12px;
+        color: var(--text);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .drawer nav a:hover {
+        background: rgba(140, 21, 21, 0.06);
+      }
+      .drawer .drawer-actions {
+        padding: 0 16px 18px 16px;
+        display: grid;
+        gap: 10px;
+      }
+      .drawer-open .drawer-overlay {
+        display: block;
+      }
+      .drawer-open .drawer {
+        transform: translateX(0);
+      }
 
-    section{
-      padding: var(--py) 0;
-      scroll-margin-top: calc(var(--nav-h) + 18px);
-    }
-    .section-head{
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 18px;
-    }
+      section {
+        padding: var(--py) 0;
+        scroll-margin-top: calc(var(--nav-h) + 18px);
+      }
+      .section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
 
-    h1, h2, h3{
-      font-family: var(--font-head);
-      line-height: var(--lh-head);
-      margin: 0;
-    }
-    h1{ font-size: clamp(32px, 4vw, var(--fs-h1)); letter-spacing: -0.02em; }
-    h2{ font-size: var(--fs-h2); letter-spacing: -0.01em; }
-    h3{ font-size: var(--fs-h3); }
-    p{ margin: 10px 0; color: var(--muted); }
-    .lede{ font-size: 18px; color: var(--text); margin-top: 12px; max-width: 75ch; }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-head);
+        line-height: var(--lh-head);
+        margin: 0;
+      }
+      h1 {
+        font-size: clamp(32px, 4vw, var(--fs-h1));
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: var(--fs-h2);
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: var(--fs-h3);
+      }
+      p {
+        margin: 10px 0;
+        color: var(--muted);
+      }
+      .lede {
+        font-size: 18px;
+        color: var(--text);
+        margin-top: 12px;
+        max-width: 75ch;
+      }
 
-    .hero{
-      padding: 46px 0 42px 0;
-    }
-    .hero-grid{
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: start;
-    }
-    .hero-meta{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-top: 14px;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .hero-actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
+      .hero {
+        padding: 46px 0 42px 0;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        align-items: start;
+      }
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-top: 14px;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
 
-    .cards{
-      display: grid;
-      gap: 12px;
-    }
-    .card{
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 16px;
-    }
-    .info-card{
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 10px;
-      align-items: start;
-    }
-    .info-card .k{
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .info-card .v{
-      font-weight: 650;
-      color: var(--text);
-    }
+      .cards {
+        display: grid;
+        gap: 12px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+      .info-card {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 10px;
+        align-items: start;
+      }
+      .info-card .k {
+        color: var(--muted);
+        font-weight: 800;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .info-card .v {
+        font-weight: 650;
+        color: var(--text);
+      }
 
-    .logo-row{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-top: 14px;
-    }
-    .logo-chip{
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,0.015);
-      border-radius: 999px;
-      padding: 8px 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-chip img{
-      height: 24px;
-      width: auto;
-      display: block;
-    }
+      .logo-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-top: 14px;
+      }
+      .logo-chip {
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.015);
+        border-radius: 999px;
+        padding: 8px 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-chip img {
+        height: 24px;
+        width: auto;
+        display: block;
+      }
 
-    .callout{
-      border-radius: var(--radius);
-      border: 1px solid rgba(140,21,21,0.16);
-      background: var(--callout-bg);
-      padding: 16px;
-      display: grid;
-      gap: 6px;
-    }
-    .callout strong{ color: var(--cardinal-dark); }
+      .callout {
+        border-radius: var(--radius);
+        border: 1px solid rgba(140, 21, 21, 0.16);
+        background: var(--callout-bg);
+        padding: 16px;
+        display: grid;
+        gap: 6px;
+      }
+      .callout strong {
+        color: var(--cardinal-dark);
+      }
 
-    .note{
-      color: var(--muted);
-      font-size: 14px;
-      margin: 8px 0 0 0;
-    }
+      .note {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 8px 0 0 0;
+      }
 
-    .table{
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      overflow: hidden;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-    }
-    .table thead th{
-      text-align: left;
-      padding: 14px 14px;
-      font-size: 13px;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      background: linear-gradient(180deg, rgba(140,21,21,0.06), rgba(140,21,21,0.02));
-      border-bottom: 1px solid var(--border);
-    }
-    .table tbody td{
-      padding: 14px 14px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-    .table tbody tr:last-child td{ border-bottom: none; }
-    .time{
-      font-variant-numeric: tabular-nums;
-      white-space: nowrap;
-      color: var(--text);
-      font-weight: 800;
-      width: 160px;
-    }
-    .session-title{
-      color: var(--text);
-      font-weight: 800;
-    }
-    .session-details{
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+      .table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        overflow: hidden;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+      .table thead th {
+        text-align: left;
+        padding: 14px 14px;
+        font-size: 13px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        background: linear-gradient(180deg, rgba(140, 21, 21, 0.06), rgba(140, 21, 21, 0.02));
+        border-bottom: 1px solid var(--border);
+      }
+      .table tbody td {
+        padding: 14px 14px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .table tbody tr:last-child td {
+        border-bottom: none;
+      }
+      .time {
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        color: var(--text);
+        font-weight: 800;
+        width: 160px;
+      }
+      .session-title {
+        color: var(--text);
+        font-weight: 800;
+      }
+      .session-details {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 14px;
+      }
 
-    /* Speakers */
-    .speakers-wrap{
-      display: grid;
-      gap: 14px;
-    }
-    .featured-speaker{
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-    .people-grid{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .person{
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 12px;
-      align-items: center;
-    }
-    .avatar{
-      width: 72px;
-      height: 72px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,0.03);
-    }
-    .avatar img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .featured-speaker .avatar{
-      width: 140px;
-      height: 140px;
-      border-radius: 20px;
-    }
-    .name{
-      font-weight: 900;
-      color: var(--text);
-      font-size: 18px;
-      margin: 0;
-    }
-    .name a{
-      color: inherit;
-      text-decoration: none;
-    }
-    .name a:hover{ text-decoration: underline; }
-    .aff{
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 4px;
-    }
-    .tag{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 900;
-      color: var(--cardinal-dark);
-      background: rgba(140,21,21,0.10);
-      border: 1px solid rgba(140,21,21,0.14);
-      padding: 6px 10px;
-      border-radius: 999px;
-      width: fit-content;
-      margin-top: 10px;
-    }
-    .talk-title{
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px dashed rgba(0,0,0,0.12);
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .talk-title strong{ color: var(--text); }
+      /* Speakers */
+      .speakers-wrap {
+        display: grid;
+        gap: 14px;
+      }
+      .featured-speaker {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 16px;
+        align-items: start;
+      }
+      .people-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .person {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 12px;
+        align-items: center;
+      }
+      .avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        background: rgba(0, 0, 0, 0.03);
+      }
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .featured-speaker .avatar {
+        width: 140px;
+        height: 140px;
+        border-radius: 20px;
+      }
+      .name {
+        font-weight: 900;
+        color: var(--text);
+        font-size: 18px;
+        margin: 0;
+      }
+      .name a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .name a:hover {
+        text-decoration: underline;
+      }
+      .aff {
+        color: var(--muted);
+        font-size: 14px;
+        margin-top: 4px;
+      }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--cardinal-dark);
+        background: rgba(140, 21, 21, 0.1);
+        border: 1px solid rgba(140, 21, 21, 0.14);
+        padding: 6px 10px;
+        border-radius: 999px;
+        width: fit-content;
+        margin-top: 10px;
+      }
+      .talk-title {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed rgba(0, 0, 0, 0.12);
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .talk-title strong {
+        color: var(--text);
+      }
 
-    /* Resources */
-    .link-card{
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .link-card a{
-      font-weight: 900;
-      text-decoration: none;
-      color: var(--cardinal-dark);
-    }
-    .link-card a:hover{ text-decoration: underline; }
-    .link-card span{
-      color: var(--muted);
-      font-size: 14px;
-    }
+      /* Resources */
+      .link-card {
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .link-card a {
+        font-weight: 900;
+        text-decoration: none;
+        color: var(--cardinal-dark);
+      }
+      .link-card a:hover {
+        text-decoration: underline;
+      }
+      .link-card span {
+        color: var(--muted);
+        font-size: 14px;
+      }
 
-    /* Organizers */
-    .org-actions{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 12px;
-      align-items: center;
-    }
-    .inline-btn{
-      border: 1px solid var(--border);
-      background: rgba(140,21,21,0.04);
-      color: var(--cardinal-dark);
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-    .inline-btn:hover{ background: rgba(140,21,21,0.08); }
+      /* Organizers */
+      .org-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+        align-items: center;
+      }
+      .inline-btn {
+        border: 1px solid var(--border);
+        background: rgba(140, 21, 21, 0.04);
+        color: var(--cardinal-dark);
+        padding: 10px 12px;
+        border-radius: 12px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+      .inline-btn:hover {
+        background: rgba(140, 21, 21, 0.08);
+      }
 
-    footer{
-      border-top: 1px solid var(--border);
-      padding: 22px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .footer-grid{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-    }
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 22px 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+      }
 
-    @media (min-width: 900px){
-      nav ul{ display: flex; }
-      .hamburger{ display: none; }
-      .people-grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    }
-    @media (max-width: 900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      .featured-speaker{ grid-template-columns: 96px 1fr; }
-      .featured-speaker .avatar{ width: 96px; height: 96px; }
-      .brand{ min-width: auto; }
-    }
+      @media (min-width: 900px) {
+        nav ul {
+          display: flex;
+        }
+        .hamburger {
+          display: none;
+        }
+        .people-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .featured-speaker {
+          grid-template-columns: 96px 1fr;
+        }
+        .featured-speaker .avatar {
+          width: 96px;
+          height: 96px;
+        }
+        .brand {
+          min-width: auto;
+        }
+      }
 
-    @media (prefers-reduced-motion: reduce){
-      *{ scroll-behavior: auto !important; transition: none !important; }
-    }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
 
-    .brand-logo{
-  height: 28px;
-  width: auto;
-  display: block;
-}
+      .brand-logo {
+        height: 28px;
+        width: auto;
+        display: block;
+      }
 
-/* --- Mobile header overflow fixes --- */
-@media (max-width: 560px){
-  /* Let the brand area shrink instead of pushing buttons off-screen */
-  .brand{ flex: 1 1 auto; min-width: 0; }
-  .brand-title{ min-width: 0; }
+      /* --- Mobile header overflow fixes --- */
+      @media (max-width: 560px) {
+        /* Let the brand area shrink instead of pushing buttons off-screen */
+        .brand {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+        .brand-title {
+          min-width: 0;
+        }
 
-  /* Keep the main title on one line with ellipsis instead of wrapping */
-  .brand-title strong{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+        /* Keep the main title on one line with ellipsis instead of wrapping */
+        .brand-title strong {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
 
-  /* Hide the subtitle on mobile (Stanford University · March 6, 2026) */
-  .brand-title span{ display: none; }
+        /* Hide the subtitle on mobile (Stanford University · March 6, 2026) */
+        .brand-title span {
+          display: none;
+        }
 
-  /* Remove the top-bar calendar button on mobile (still available in hero + drawer) */
-  #cta-calendar-top{ display: none; }
+        /* Remove the top-bar calendar button on mobile (still available in hero + drawer) */
+        #cta-calendar-top {
+          display: none;
+        }
 
-  /* Make remaining header actions slightly more compact */
-  .nav-actions{ gap: 8px; }
-  .nav-actions .btn{ padding: 9px 12px; font-size: 13px; }
+        /* Make remaining header actions slightly more compact */
+        .nav-actions {
+          gap: 8px;
+        }
+        .nav-actions .btn {
+          padding: 9px 12px;
+          font-size: 13px;
+        }
 
-  /* Give the logo a bit less footprint */
-  .brand-logo{ height: 22px; }
-}
+        /* Give the logo a bit less footprint */
+        .brand-logo {
+          height: 22px;
+        }
+      }
 
-/* --- Mobile people cards: stack avatar above name to avoid horizontal overflow --- */
-@media (max-width: 560px){
-  /* Two per row on phones */
-  .people-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
+      /* --- Mobile people cards: stack avatar above name to avoid horizontal overflow --- */
+      @media (max-width: 560px) {
+        /* Two per row on phones */
+        .people-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+        }
 
-  /* Make each person card vertical + compact */
-  .person{
-    grid-template-columns: 1fr;     /* stack */
-    justify-items: center;
-    text-align: center;
-    gap: 8px;
-    padding: 12px;                 /* override .card padding (16px) */
-  }
+        /* Make each person card vertical + compact */
+        .person {
+          grid-template-columns: 1fr; /* stack */
+          justify-items: center;
+          text-align: center;
+          gap: 8px;
+          padding: 12px; /* override .card padding (16px) */
+        }
 
-  .avatar{
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
-  }
+        .avatar {
+          width: 60px;
+          height: 60px;
+          border-radius: 14px;
+        }
 
-  .name{ font-size: 15px; line-height: 1.2; }
-  .aff{ font-size: 12px; margin-top: 3px; }
+        .name {
+          font-size: 15px;
+          line-height: 1.2;
+        }
+        .aff {
+          font-size: 12px;
+          margin-top: 3px;
+        }
 
-  /* Ensure long names never overflow */
-  .name a{
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-}
-@media (max-width: 360px){
-  .people-grid{ grid-template-columns: 1fr; }
-}
+        /* Ensure long names never overflow */
+        .name a {
+          overflow-wrap: anywhere;
+          word-break: break-word;
+        }
+      }
+      @media (max-width: 360px) {
+        .people-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="top-stripe" aria-hidden="true"></div>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="top-stripe" aria-hidden="true"></div>
-
-  <header>
-    <div class="container">
-      <div class="nav" role="navigation" aria-label="Primary">
-        <div class="brand">
-          <!-- <div class="seal" aria-hidden="true">
+    <header>
+      <div class="container">
+        <div class="nav" role="navigation" aria-label="Primary">
+          <div class="brand">
+            <!-- <div class="seal" aria-hidden="true">
             <img src="./static/logos/stanford-wordmark.png" alt="" />
           </div> -->
-          <img class="brand-logo" src="./static/logos/stanford-wordmark.png" alt="Stanford University" />
-          <div class="brand-title">
-            <strong>Language Generation Day</strong>
-            <span>Stanford University · March 6, 2026</span>
-          </div>
-        </div>
-
-
-        <nav aria-label="Site">
-          <ul>
-            <li><a href="#overview" data-nav="overview">Overview</a></li>
-            <li><a href="#program" data-nav="program">Program</a></li>
-            <li><a href="#speakers" data-nav="speakers">Speakers</a></li>
-            <li><a href="#resources" data-nav="resources">Resources</a></li>
-            <li><a href="#organizers" data-nav="organizers">Organizers</a></li>
-          </ul>
-        </nav>
-
-        <div class="nav-actions">
-          <a class="btn secondary" id="cta-calendar-top" href="#" role="button">
-            Add to calendar
-          </a>
-          <a class="btn primary" id="cta-rsvp-top" href="#" role="button" aria-disabled="true" title="RSVP link">
-            RSVP
-          </a>
-          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <div class="drawer-overlay" id="drawerOverlay" tabindex="-1" aria-hidden="true"></div>
-  <aside class="drawer" id="drawer" aria-label="Mobile menu" aria-hidden="true">
-    <header>
-      <div class="drawer-title">
-        <strong>Menu</strong>
-        <button class="drawer-close" id="drawerClose" aria-label="Close menu">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" width="20" height="20">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-    </header>
-    <nav>
-      <a href="#overview">Overview</a>
-      <a href="#program">Program</a>
-      <a href="#speakers">Speakers</a>
-      <a href="#resources">Resources</a>
-      <a href="#organizers">Organizers</a>
-    </nav>
-    <div class="drawer-actions">
-      <a class="btn secondary" id="cta-calendar-drawer" href="#" role="button">Add to calendar</a>
-      <a class="btn primary" id="cta-rsvp-drawer" href="#" role="button" aria-disabled="true" title="RSVP link">
-        RSVP
-      </a>
-    </div>
-  </aside>
-
-  <main id="main">
-    <!-- Hero -->
-    <div class="hero-backdrop">
-      <section class="hero">
-        <div class="container">
-          <div class="hero-grid">
-            <div>
-              <h1>Language Generation Day
-              </h1>
-
-              <p class="lede">
-                A day-long workshop on language generation in the limit.
-              </p>
-
-              <div class="hero-meta" aria-label="Event meta">
-                <!-- <span><strong>Stanford University</strong> · -->
-                <span>Friday, March 6, 2026</span>
-                <span aria-hidden="true">·</span>
-                <span>9:30 AM – 3:30 PM PST</span>
-              </div>
-              <br>
-
-              <div class="hero-actions" aria-label="Primary actions">
-                <a class="btn primary" id="cta-rsvp-hero" href="#" role="button" target="_blank" rel="noopener noreferrer">
-                  RSVP
-                </a>
-
-                <a class="btn secondary" id="cta-calendar-hero" href="#" role="button">
-                  Add to calendar
-                </a>
-              </div>
-
-              <p class="note" style="margin-top: 14px; color: var(--muted);">
-                Registration is free but RSVP is required.
-              </p>
-
-
-            </div>
-
-            <div class="cards" aria-label="Quick facts">
-              <div class="card info-card">
-                <div class="k">When</div>
-                <div class="v">Friday, March 6, 2026 · 9:30 AM – 3:30 PM PST</div>
-              </div>
-              <div class="card info-card">
-                <div class="k">Where</div>
-                <div class="v">Stanford campus · Room TBA</div>
-              </div>
-              <!-- <div class="card info-card">
-                <div class="k">Format</div>
-                <div class="v">Short talks + discussion session on open problems and future directions</div>
-              </div> -->
+            <img class="brand-logo" src="./static/logos/stanford-wordmark.png" alt="Stanford University" />
+            <div class="brand-title">
+              <strong>Language Generation Day</strong>
+              <span>Stanford University · March 6, 2026</span>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
 
-    <!-- Overview -->
-    <section id="overview">
-      <div class="container">
-        <div class="section-head">
-          <h2>Overview</h2>
-        </div>
-        <div class="card">
-          <p>
-            When is language generation possible from examples? Language generation in the limit studies this question at a foundational level: given samples from an unknown language, can we generate new strings that are valid and have not already been seen in the data? 
-          </p>
-          <p>
-            This is a growing area, which already includes a rich set of extensions (including stronger and more diverse notions of generation and algorithms robust to contamination in data), while building bridges to other parts of theoretical CS, learning theory, and mathematics.
-          </p>
-          <p>
-            This workshop brings together Stanford students and researchers interested in these foundations and recent developments, with short talks and discussion on emerging directions and open problems.
-          </p>
-        </div>
-      </div>
-    </section>
+          <nav aria-label="Site">
+            <ul>
+              <li><a href="#overview" data-nav="overview">Overview</a></li>
+              <li><a href="#program" data-nav="program">Program</a></li>
+              <li><a href="#speakers" data-nav="speakers">Speakers</a></li>
+              <li><a href="#resources" data-nav="resources">Resources</a></li>
+              <li><a href="#organizers" data-nav="organizers">Organizers</a></li>
+            </ul>
+          </nav>
 
-    <!-- Program -->
-    <section id="program">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Program</h2>
-            <p class="note">All times PST. Schedule is subject to minor updates.</p>
-          </div>
-        </div>
-
-        <table class="table" aria-label="Schedule">
-          <thead>
-            <tr>
-              <th style="width: 180px;">Time</th>
-              <th>Session</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="time">09:30–10:00</td>
-              <td><div class="session-title">Breakfast and coffee</div></td>
-            </tr>
-            <tr>
-              <td class="time">10:00–11:00</td>
-              <td>
-                <div class="session-title">Introductory talk</div>
-                <div class="session-details">Jon Kleinberg (50 min talk + 10 min Q&amp;A)</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">11:00–12:00</td>
-              <td>
-                <div class="session-title">Contributed talks</div>
-                <div class="session-details">Two talks · 25 min + 5 min Q&amp;A each · speakers and order TBA</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">12:00–13:00</td>
-              <td><div class="session-title">Lunch</div></td>
-            </tr>
-            <tr>
-              <td class="time">13:00–14:00</td>
-              <td>
-                <div class="session-title">Contributed talks</div>
-                <div class="session-details">Two talks · 25 min + 5 min Q&amp;A · speaker TBA</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">14:00–14:15</td>
-              <td><div class="session-title">Coffee + setup</div></td>
-            </tr>
-            <tr>
-              <td class="time">14:15–15:15</td>
-              <td>
-                <div class="session-title">Discussion session</div>
-                <div class="session-details">Open problems and future directions</div>
-              </td>
-            </tr>
-            <tr>
-              <td class="time">15:00–15:30</td>
-              <td>
-                <div class="session-title">Closing comments</div>
-                <!-- <div class="session-details">Wrap-up and continued conversations</div> -->
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Speakers -->
-    <section id="speakers">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Speakers</h2>
-            <p class="note">Talk titles and abstracts will be posted here as they are confirmed.</p>
-          </div>
-        </div>
-
-        <div class="speakers-wrap" aria-label="Speakers">
-          <!-- Featured speaker row -->
-          <article class="card featured-speaker" aria-label="Featured speaker">
-            <div class="avatar">
-              <img src="./static/people/jon-kleinberg.jpg" alt="Photo of Jon Kleinberg" />
-            </div>
-            <div>
-              <p class="name">
-                <a href="https://www.cs.cornell.edu/home/kleinber/" target="_blank" rel="noopener noreferrer">
-                  Jon Kleinberg
-                </a>
-              </p>
-              <div class="aff">Cornell University</div>
-              <div class="tag">Introductory speaker</div>
-
-              <div class="talk-title">
-                <strong>Talk:</strong> Introduction to language generation in the limit
-              </div>
-
-              <!-- Talk abstract intentionally omitted for now (TBA). -->
-            </div>
-          </article>
-
-          <!-- Other speakers in one line (on desktop) -->
-          <div class="people-grid" aria-label="Other speakers">
-            <article class="card person">
-              <div class="avatar">
-                <img src="./static/people/anay-mehrotra.jpg" alt="Photo of Anay Mehrotra" />
-              </div>
-              <div>
-                <p class="name">
-                  <a href="https://anaymehrotra.com/" target="_blank" rel="noopener noreferrer">
-                    Anay Mehrotra
-                  </a>
-                </p>
-                <div class="aff">Stanford University</div>
-                <!-- Talk title and abstract intentionally omitted for now (TBA). -->
-              </div>
-            </article>
-
-            <article class="card person">
-              <div class="avatar">
-                <img src="./static/people/chirag-pabbaraju.jpg" alt="Photo of Chirag Pabbaraju" />
-              </div>
-              <div>
-                <p class="name">
-                  <a href="https://web.stanford.edu/~cpabbara/" target="_blank" rel="noopener noreferrer">
-                    Chirag Pabbaraju
-                  </a>
-                </p>
-                <div class="aff">Stanford University</div>
-                <!-- Talk title and abstract intentionally omitted for now (TBA). -->
-              </div>
-            </article>
-
-            <article class="card person">
-              <div class="avatar">
-                <img src="./static/people/charlotte-peale.jpg" alt="Photo of Charlotte Peale" />
-              </div>
-              <div>
-                <p class="name">
-                  <a href="https://cpeale.github.io/" target="_blank" rel="noopener noreferrer">
-                    Charlotte Peale
-                  </a>
-                </p>
-                <div class="aff">Stanford University</div>
-                <!-- Talk title and abstract intentionally omitted for now (TBA). -->
-              </div>
-            </article>
-
-            <article class="card person">
-              <div class="avatar">
-                <img src="./static/people/grigoris-velegkas.jpg" alt="Photo of Grigoris Velegkas" />
-              </div>
-              <div>
-                <p class="name">
-                  <a href="https://gvelegkas.github.io/" target="_blank" rel="noopener noreferrer">
-                    Grigoris Velegkas
-                  </a>
-                </p>
-                <div class="aff">Google Research</div>
-                <!-- Talk title and abstract intentionally omitted for now (TBA). -->
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resources -->
-    <section id="resources">
-      <div class="container">
-        <div class="section-head">
-          <h2>Resources</h2>
-        </div>
-          <p>
-            An actively updated collection of papers related to this topic is available here:
-              <a href="https://languagegeneration.github.io/" target="_blank" rel="noopener noreferrer">
-                languagegeneration.github.io
-              </a>
-          </p>
-      </div>
-    </section>
-
-    <!-- Organizers -->
-    <section id="organizers">
-      <div class="container">
-        <div class="section-head">
-          <h2>Organizers / Contact</h2>
-        </div>
-
-        <div class="card">
-          <div class="people-grid" style="margin-top: 14px;" aria-label="Organizers">
-            <article class="card person" style="box-shadow:none; margin:0; border:1px solid var(--border);">
-              <div class="avatar">
-                <img src="./static/people/anay-mehrotra.jpg" alt="Photo of Anay Mehrotra" />
-              </div>
-              <div>
-                <p class="name">
-                  <a href="https://anaymehrotra.com/" target="_blank" rel="noopener noreferrer">
-                    Anay Mehrotra
-                  </a>
-                </p>
-                <div class="aff">Stanford University</div>
-              </div>
-            </article>
-
-            <article class="card person" style="box-shadow:none; margin:0; border:1px solid var(--border);">
-              <div class="avatar">
-                <img src="./static/people/amin-saberi.jpg" alt="Photo of Amin Saberi" />
-              </div>
-              <div>
-                <p class="name">
-                  <a href="https://www.web.stanford.edu/~saberi/" target="_blank" rel="noopener noreferrer">
-                    Amin Saberi
-                  </a>
-                </p>
-                <div class="aff">Stanford University</div>
-              </div>
-            </article>
-
-            <article class="card person" style="box-shadow:none; margin:0; border:1px solid var(--border);">
-              <div class="avatar">
-                <img src="./static/people/grigoris-velegkas.jpg" alt="Photo of Grigoris Velegkas" />
-              </div>
-              <div>
-                <p class="name">
-                  <a href="https://gvelegkas.github.io/" target="_blank" rel="noopener noreferrer">
-                    Grigoris Velegkas
-                  </a>
-                </p>
-                <div class="aff">Google Research</div>
-              </div>
-            </article>
-          </div>
-
-          <div class="org-actions" aria-label="Contact actions">
-            <button class="inline-btn" id="copyEmails" type="button">
-              Copy emails
+          <div class="nav-actions">
+            <a class="btn secondary" id="cta-calendar-top" href="#" role="button"> Add to calendar </a>
+            <a class="btn primary" id="cta-rsvp-top" href="#" role="button" aria-disabled="true" title="RSVP link"> RSVP </a>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+              </svg>
             </button>
           </div>
         </div>
       </div>
-    </section>
+    </header>
 
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div>Stanford University · Language Generation Day</div>
-          <div id="lastUpdated">Last updated: February 14th, 2026</div>
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" id="drawerOverlay" tabindex="-1" aria-hidden="true"></div>
+    <aside class="drawer" id="drawer" aria-label="Mobile menu" aria-hidden="true">
+      <header>
+        <div class="drawer-title">
+          <strong>Menu</strong>
+          <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" width="20" height="20">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
+          </button>
         </div>
+      </header>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#program">Program</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#resources">Resources</a>
+        <a href="#organizers">Organizers</a>
+      </nav>
+      <div class="drawer-actions">
+        <a class="btn secondary" id="cta-calendar-drawer" href="#" role="button">Add to calendar</a>
+        <a class="btn primary" id="cta-rsvp-drawer" href="#" role="button" aria-disabled="true" title="RSVP link"> RSVP </a>
       </div>
-    </footer>
-  </main>
+    </aside>
 
-  <script>
-    (function () {
-      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    <main id="main">
+      <!-- Hero -->
+      <div class="hero-backdrop">
+        <section class="hero">
+          <div class="container">
+            <div class="hero-grid">
+              <div>
+                <h1>Language Generation Day</h1>
 
-      function smoothScrollTo(hash) {
-        const el = document.querySelector(hash);
-        if (!el) return;
+                <p class="lede">A day-long workshop on language generation in the limit.</p>
 
-        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-h")) || 64;
-        const top = el.getBoundingClientRect().top + window.pageYOffset - (navH + 12);
+                <div class="hero-meta" aria-label="Event meta">
+                  <!-- <span><strong>Stanford University</strong> · -->
+                  <span>Friday, March 6, 2026</span>
+                  <span aria-hidden="true">·</span>
+                  <span>9:30 AM – 3:30 PM PST</span>
+                </div>
+                <br />
 
-        window.scrollTo({ top, behavior: prefersReducedMotion ? "auto" : "smooth" });
-      }
+                <div class="hero-actions" aria-label="Primary actions">
+                  <a class="btn primary" id="cta-rsvp-hero" href="#" role="button" target="_blank" rel="noopener noreferrer"> RSVP </a>
 
-      function isSamePageAnchor(a) {
-        if (!a || !a.getAttribute) return false;
-        const href = a.getAttribute("href") || "";
-        return href.startsWith("#") && href.length > 1;
-      }
+                  <a class="btn secondary" id="cta-calendar-hero" href="#" role="button"> Add to calendar </a>
+                </div>
 
-      document.addEventListener("click", (e) => {
-        const a = e.target.closest("a");
-        if (!a) return;
-        if (!isSamePageAnchor(a)) return;
+                <p class="note" style="margin-top: 14px; color: var(--muted)">Registration is free but RSVP is required.</p>
+              </div>
 
-        const hash = a.getAttribute("href");
-        const target = document.querySelector(hash);
-        if (!target) return;
+              <div class="cards" aria-label="Quick facts">
+                <div class="card info-card">
+                  <div class="k">When</div>
+                  <div class="v">Friday, March 6, 2026 · 9:30 AM – 3:30 PM PST</div>
+                </div>
+                <div class="card info-card">
+                  <div class="k">Where</div>
+                  <div class="v">Stanford campus · Room TBA</div>
+                </div>
+                <!-- <div class="card info-card">
+                <div class="k">Format</div>
+                <div class="v">Short talks + discussion session on open problems and future directions</div>
+              </div> -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
-        e.preventDefault();
-        history.pushState(null, "", hash);
-        smoothScrollTo(hash);
-      });
+      <!-- Overview -->
+      <section id="overview">
+        <div class="container">
+          <div class="section-head">
+            <h2>Overview</h2>
+          </div>
+          <div class="card">
+            <p>
+              When is language generation possible from examples? Language generation in the limit studies this question at a foundational level:
+              given samples from an unknown language, can we generate new strings that are valid and have not already been seen in the data?
+            </p>
+            <p>
+              This is a growing area, which already includes a rich set of extensions (including stronger and more diverse notions of generation and
+              algorithms robust to contamination in data), while building bridges to other parts of theoretical CS, learning theory, and mathematics.
+            </p>
+            <p>
+              This workshop brings together Stanford students and researchers interested in these foundations and recent developments, with short
+              talks and discussion on emerging directions and open problems.
+            </p>
+          </div>
+        </div>
+      </section>
 
-      // Active nav highlighting
-      const navLinks = Array.from(document.querySelectorAll('nav ul a[data-nav]'));
-      const sectionIds = navLinks.map(a => a.getAttribute("data-nav"));
-      const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+      <!-- Program -->
+      <section id="program">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Program</h2>
+              <p class="note">All times PST. Schedule is subject to minor updates.</p>
+            </div>
+          </div>
 
-      function setActive(id) {
-        navLinks.forEach(a => {
-          const isActive = a.getAttribute("data-nav") === id;
-          a.setAttribute("aria-current", isActive ? "true" : "false");
-        });
-      }
+          <table class="table" aria-label="Schedule">
+            <thead>
+              <tr>
+                <th style="width: 180px">Time</th>
+                <th>Session</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time">09:30–10:00</td>
+                <td><div class="session-title">Breakfast and coffee</div></td>
+              </tr>
+              <tr>
+                <td class="time">10:00–11:00</td>
+                <td>
+                  <div class="session-title">Introductory talk</div>
+                  <div class="session-details">Jon Kleinberg (50 min talk + 10 min Q&amp;A)</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="time">11:00–12:00</td>
+                <td>
+                  <div class="session-title">Contributed talks</div>
+                  <div class="session-details">Two talks · 25 min + 5 min Q&amp;A each · speakers and order TBA</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="time">12:00–13:00</td>
+                <td><div class="session-title">Lunch</div></td>
+              </tr>
+              <tr>
+                <td class="time">13:00–14:00</td>
+                <td>
+                  <div class="session-title">Contributed talks</div>
+                  <div class="session-details">Two talks · 25 min + 5 min Q&amp;A · speaker TBA</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="time">14:00–14:15</td>
+                <td><div class="session-title">Coffee + setup</div></td>
+              </tr>
+              <tr>
+                <td class="time">14:15–15:15</td>
+                <td>
+                  <div class="session-title">Discussion session</div>
+                  <div class="session-details">Open problems and future directions</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="time">15:00–15:30</td>
+                <td>
+                  <div class="session-title">Closing comments</div>
+                  <!-- <div class="session-details">Wrap-up and continued conversations</div> -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-      if ("IntersectionObserver" in window) {
-        const io = new IntersectionObserver((entries) => {
-          const visible = entries
-            .filter(en => en.isIntersecting)
-            .sort((a, b) => (b.intersectionRatio - a.intersectionRatio))[0];
+      <!-- Speakers -->
+      <section id="speakers">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>Speakers</h2>
+              <p class="note">Talk titles and abstracts will be posted here as they are confirmed.</p>
+            </div>
+          </div>
 
-          if (visible && visible.target && visible.target.id) setActive(visible.target.id);
-        }, {
-          root: null,
-          rootMargin: "-35% 0px -55% 0px",
-          threshold: [0.05, 0.15, 0.25, 0.35, 0.5, 0.65]
-        });
+          <div class="speakers-wrap" aria-label="Speakers">
+            <!-- Featured speaker row -->
+            <article class="card featured-speaker" aria-label="Featured speaker">
+              <div class="avatar">
+                <img src="./static/people/jon-kleinberg.jpg" alt="Photo of Jon Kleinberg" />
+              </div>
+              <div>
+                <p class="name">
+                  <a href="https://www.cs.cornell.edu/home/kleinber/" target="_blank" rel="noopener noreferrer"> Jon Kleinberg </a>
+                </p>
+                <div class="aff">Cornell University</div>
+                <div class="tag">Introductory speaker</div>
 
-        sections.forEach(sec => io.observe(sec));
-      }
+                <div class="talk-title"><strong>Talk:</strong> Introduction to language generation in the limit</div>
 
-      // Mobile nav drawer with focus trap
-      const body = document.body;
-      const hamburger = document.getElementById("hamburger");
-      const drawer = document.getElementById("drawer");
-      const overlay = document.getElementById("drawerOverlay");
-      const closeBtn = document.getElementById("drawerClose");
-      const drawerLinks = Array.from(drawer.querySelectorAll("a[href^='#']"));
+                <!-- Talk abstract intentionally omitted for now (TBA). -->
+              </div>
+            </article>
 
-      let lastFocused = null;
+            <!-- Other speakers in one line (on desktop) -->
+            <div class="people-grid" aria-label="Other speakers">
+              <article class="card person">
+                <div class="avatar">
+                  <img src="./static/people/anay-mehrotra.jpg" alt="Photo of Anay Mehrotra" />
+                </div>
+                <div>
+                  <p class="name">
+                    <a href="https://anaymehrotra.com/" target="_blank" rel="noopener noreferrer"> Anay Mehrotra </a>
+                  </p>
+                  <div class="aff">Stanford University</div>
+                  <!-- Talk title and abstract intentionally omitted for now (TBA). -->
+                </div>
+              </article>
 
-      function getFocusable(container) {
-        const selectors = [
-          "a[href]",
-          "button:not([disabled])",
-          "[tabindex]:not([tabindex='-1'])",
-          "input",
-          "select",
-          "textarea"
-        ].join(",");
-        return Array.from(container.querySelectorAll(selectors))
-          .filter(el => !el.hasAttribute("disabled") && el.getAttribute("aria-disabled") !== "true");
-      }
+              <article class="card person">
+                <div class="avatar">
+                  <img src="./static/people/chirag-pabbaraju.jpg" alt="Photo of Chirag Pabbaraju" />
+                </div>
+                <div>
+                  <p class="name">
+                    <a href="https://web.stanford.edu/~cpabbara/" target="_blank" rel="noopener noreferrer"> Chirag Pabbaraju </a>
+                  </p>
+                  <div class="aff">Stanford University</div>
+                  <!-- Talk title and abstract intentionally omitted for now (TBA). -->
+                </div>
+              </article>
 
-      function openDrawer() {
-        lastFocused = document.activeElement;
-        body.classList.add("drawer-open");
-        drawer.setAttribute("aria-hidden", "false");
-        overlay.setAttribute("aria-hidden", "false");
-        hamburger.setAttribute("aria-expanded", "true");
+              <article class="card person">
+                <div class="avatar">
+                  <img src="./static/people/charlotte-peale.jpg" alt="Photo of Charlotte Peale" />
+                </div>
+                <div>
+                  <p class="name">
+                    <a href="https://cpeale.github.io/" target="_blank" rel="noopener noreferrer"> Charlotte Peale </a>
+                  </p>
+                  <div class="aff">Stanford University</div>
+                  <!-- Talk title and abstract intentionally omitted for now (TBA). -->
+                </div>
+              </article>
 
-        const focusables = getFocusable(drawer);
-        (focusables[0] || closeBtn).focus();
-      }
+              <article class="card person">
+                <div class="avatar">
+                  <img src="./static/people/grigoris-velegkas.jpg" alt="Photo of Grigoris Velegkas" />
+                </div>
+                <div>
+                  <p class="name">
+                    <a href="https://gvelegkas.github.io/" target="_blank" rel="noopener noreferrer"> Grigoris Velegkas </a>
+                  </p>
+                  <div class="aff">Google Research</div>
+                  <!-- Talk title and abstract intentionally omitted for now (TBA). -->
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      function closeDrawer() {
-        body.classList.remove("drawer-open");
-        drawer.setAttribute("aria-hidden", "true");
-        overlay.setAttribute("aria-hidden", "true");
-        hamburger.setAttribute("aria-expanded", "false");
+      <!-- Resources -->
+      <section id="resources">
+        <div class="container">
+          <div class="section-head">
+            <h2>Resources</h2>
+          </div>
+          <p>
+            An actively updated collection of papers related to this topic is available here:
+            <a href="https://languagegeneration.github.io/" target="_blank" rel="noopener noreferrer"> languagegeneration.github.io </a>
+          </p>
+        </div>
+      </section>
 
-        if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
-        else hamburger.focus();
-      }
+      <!-- Organizers -->
+      <section id="organizers">
+        <div class="container">
+          <div class="section-head">
+            <h2>Organizers / Contact</h2>
+          </div>
 
-      hamburger.addEventListener("click", openDrawer);
-      closeBtn.addEventListener("click", closeDrawer);
-      overlay.addEventListener("click", closeDrawer);
-      drawerLinks.forEach(a => a.addEventListener("click", closeDrawer));
+          <div class="card">
+            <div class="people-grid" style="margin-top: 14px" aria-label="Organizers">
+              <article class="card person" style="box-shadow: none; margin: 0; border: 1px solid var(--border)">
+                <div class="avatar">
+                  <img src="./static/people/anay-mehrotra.jpg" alt="Photo of Anay Mehrotra" />
+                </div>
+                <div>
+                  <p class="name">
+                    <a href="https://anaymehrotra.com/" target="_blank" rel="noopener noreferrer"> Anay Mehrotra </a>
+                  </p>
+                  <div class="aff">Stanford University</div>
+                </div>
+              </article>
 
-      document.addEventListener("keydown", (e) => {
-        const isOpen = body.classList.contains("drawer-open");
-        if (!isOpen) return;
+              <article class="card person" style="box-shadow: none; margin: 0; border: 1px solid var(--border)">
+                <div class="avatar">
+                  <img src="./static/people/amin-saberi.jpg" alt="Photo of Amin Saberi" />
+                </div>
+                <div>
+                  <p class="name">
+                    <a href="https://www.web.stanford.edu/~saberi/" target="_blank" rel="noopener noreferrer"> Amin Saberi </a>
+                  </p>
+                  <div class="aff">Stanford University</div>
+                </div>
+              </article>
 
-        if (e.key === "Escape") {
-          e.preventDefault();
-          closeDrawer();
-          return;
+              <article class="card person" style="box-shadow: none; margin: 0; border: 1px solid var(--border)">
+                <div class="avatar">
+                  <img src="./static/people/grigoris-velegkas.jpg" alt="Photo of Grigoris Velegkas" />
+                </div>
+                <div>
+                  <p class="name">
+                    <a href="https://gvelegkas.github.io/" target="_blank" rel="noopener noreferrer"> Grigoris Velegkas </a>
+                  </p>
+                  <div class="aff">Google Research</div>
+                </div>
+              </article>
+            </div>
+
+            <div class="org-actions" aria-label="Contact actions">
+              <button class="inline-btn" id="copyEmails" type="button">Copy emails</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">
+          <div class="footer-grid">
+            <div>Stanford University · Language Generation Day</div>
+            <div id="lastUpdated">Last updated: February 14th, 2026</div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      (function () {
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function smoothScrollTo(hash) {
+          const el = document.querySelector(hash);
+          if (!el) return;
+
+          const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-h")) || 64;
+          const top = el.getBoundingClientRect().top + window.pageYOffset - (navH + 12);
+
+          window.scrollTo({ top, behavior: prefersReducedMotion ? "auto" : "smooth" });
         }
 
-        if (e.key === "Tab") {
+        function isSamePageAnchor(a) {
+          if (!a || !a.getAttribute) return false;
+          const href = a.getAttribute("href") || "";
+          return href.startsWith("#") && href.length > 1;
+        }
+
+        document.addEventListener("click", (e) => {
+          const a = e.target.closest("a");
+          if (!a) return;
+          if (!isSamePageAnchor(a)) return;
+
+          const hash = a.getAttribute("href");
+          const target = document.querySelector(hash);
+          if (!target) return;
+
+          e.preventDefault();
+          history.pushState(null, "", hash);
+          smoothScrollTo(hash);
+        });
+
+        // Active nav highlighting
+        const navLinks = Array.from(document.querySelectorAll("nav ul a[data-nav]"));
+        const sectionIds = navLinks.map((a) => a.getAttribute("data-nav"));
+        const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+
+        function setActive(id) {
+          navLinks.forEach((a) => {
+            const isActive = a.getAttribute("data-nav") === id;
+            a.setAttribute("aria-current", isActive ? "true" : "false");
+          });
+        }
+
+        if ("IntersectionObserver" in window) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              const visible = entries.filter((en) => en.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+              if (visible && visible.target && visible.target.id) setActive(visible.target.id);
+            },
+            {
+              root: null,
+              rootMargin: "-35% 0px -55% 0px",
+              threshold: [0.05, 0.15, 0.25, 0.35, 0.5, 0.65],
+            }
+          );
+
+          sections.forEach((sec) => io.observe(sec));
+        }
+
+        // Mobile nav drawer with focus trap
+        const body = document.body;
+        const hamburger = document.getElementById("hamburger");
+        const drawer = document.getElementById("drawer");
+        const overlay = document.getElementById("drawerOverlay");
+        const closeBtn = document.getElementById("drawerClose");
+        const drawerLinks = Array.from(drawer.querySelectorAll("a[href^='#']"));
+
+        let lastFocused = null;
+
+        function getFocusable(container) {
+          const selectors = ["a[href]", "button:not([disabled])", "[tabindex]:not([tabindex='-1'])", "input", "select", "textarea"].join(",");
+          return Array.from(container.querySelectorAll(selectors)).filter(
+            (el) => !el.hasAttribute("disabled") && el.getAttribute("aria-disabled") !== "true"
+          );
+        }
+
+        function openDrawer() {
+          lastFocused = document.activeElement;
+          body.classList.add("drawer-open");
+          drawer.setAttribute("aria-hidden", "false");
+          overlay.setAttribute("aria-hidden", "false");
+          hamburger.setAttribute("aria-expanded", "true");
+
           const focusables = getFocusable(drawer);
-          if (!focusables.length) return;
-
-          const first = focusables[0];
-          const last = focusables[focusables.length - 1];
-
-          if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-          } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
+          (focusables[0] || closeBtn).focus();
         }
-      });
 
-      // RSVP buttons: disabled when URL is TBD
-      const rsvpButtons = [
-        document.getElementById("cta-rsvp-top"),
-        document.getElementById("cta-rsvp-hero"),
-        document.getElementById("cta-rsvp-drawer"),
-      ].filter(Boolean);
+        function closeDrawer() {
+          body.classList.remove("drawer-open");
+          drawer.setAttribute("aria-hidden", "true");
+          overlay.setAttribute("aria-hidden", "true");
+          hamburger.setAttribute("aria-expanded", "false");
 
-      function setRSVP(url) {
-        const isTBD = !url || url.trim().toUpperCase() === "TBD";
-        rsvpButtons.forEach(a => {
-          if (isTBD) {
-            a.setAttribute("href", "#");
-            a.setAttribute("aria-disabled", "true");
-            a.setAttribute("title", "RSVP link");
-            a.addEventListener("click", (e) => e.preventDefault());
-            a.removeAttribute("target");
-            a.removeAttribute("rel");
-          } else {
-            a.setAttribute("href", url);
-            a.setAttribute("target", "_blank");
-            a.setAttribute("rel", "noopener noreferrer");
-            a.removeAttribute("aria-disabled");
-            a.removeAttribute("title");
+          if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+          else hamburger.focus();
+        }
+
+        hamburger.addEventListener("click", openDrawer);
+        closeBtn.addEventListener("click", closeDrawer);
+        overlay.addEventListener("click", closeDrawer);
+        drawerLinks.forEach((a) => a.addEventListener("click", closeDrawer));
+
+        document.addEventListener("keydown", (e) => {
+          const isOpen = body.classList.contains("drawer-open");
+          if (!isOpen) return;
+
+          if (e.key === "Escape") {
+            e.preventDefault();
+            closeDrawer();
+            return;
+          }
+
+          if (e.key === "Tab") {
+            const focusables = getFocusable(drawer);
+            if (!focusables.length) return;
+
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
           }
         });
-      }
-      setRSVP("https://forms.gle/ZSYGBAJjdvL3We4j9");
 
-      // Calendar (ICS) download: 9:30 AM to 3:30 PM PST
-      function pad2(n) { return String(n).padStart(2, "0"); }
+        // RSVP buttons: disabled when URL is TBD
+        const rsvpButtons = [
+          document.getElementById("cta-rsvp-top"),
+          document.getElementById("cta-rsvp-hero"),
+          document.getElementById("cta-rsvp-drawer"),
+        ].filter(Boolean);
 
-      function makeICS() {
-        const title = "Language Generation Day";
-        const location = "Stanford campus · Room TBA";
-        const description =
-          "A day-long workshop on language generation in the limit.";
-        const tzid = "America/Los_Angeles";
-        const dtStart = "20260306T093000";
-        const dtEnd = "20260306T153000"; // Updated per request
+        function setRSVP(url) {
+          const isTBD = !url || url.trim().toUpperCase() === "TBD";
+          rsvpButtons.forEach((a) => {
+            if (isTBD) {
+              a.setAttribute("href", "#");
+              a.setAttribute("aria-disabled", "true");
+              a.setAttribute("title", "RSVP link");
+              a.addEventListener("click", (e) => e.preventDefault());
+              a.removeAttribute("target");
+              a.removeAttribute("rel");
+            } else {
+              a.setAttribute("href", url);
+              a.setAttribute("target", "_blank");
+              a.setAttribute("rel", "noopener noreferrer");
+              a.removeAttribute("aria-disabled");
+              a.removeAttribute("title");
+            }
+          });
+        }
+        setRSVP("https://forms.gle/ZSYGBAJjdvL3We4j9");
 
-        const now = new Date();
-        const stamp = [
-          now.getUTCFullYear(),
-          pad2(now.getUTCMonth() + 1),
-          pad2(now.getUTCDate()),
-          "T",
-          pad2(now.getUTCHours()),
-          pad2(now.getUTCMinutes()),
-          pad2(now.getUTCSeconds()),
-          "Z"
-        ].join("");
+        // Calendar (ICS) download: 9:30 AM to 3:30 PM PST
+        function pad2(n) {
+          return String(n).padStart(2, "0");
+        }
 
-        const uid = "lgd-20260306@stanford.edu";
-        const lines = [
-          "BEGIN:VCALENDAR",
-          "VERSION:2.0",
-          "PRODID:-//Language Generation Day//Stanford//EN",
-          "CALSCALE:GREGORIAN",
-          "METHOD:PUBLISH",
-          "BEGIN:VEVENT",
-          "UID:" + uid,
-          "DTSTAMP:" + stamp,
-          "SUMMARY:" + title,
-          "DESCRIPTION:" + description.replace(/\n/g, "\\n"),
-          "LOCATION:" + location,
-          "DTSTART;TZID=" + tzid + ":" + dtStart,
-          "DTEND;TZID=" + tzid + ":" + dtEnd,
-          "STATUS:TENTATIVE",
-          "END:VEVENT",
-          "END:VCALENDAR"
-        ];
-        return lines.join("\r\n");
-      }
+        function makeICS() {
+          const title = "Language Generation Day";
+          const location = "Stanford campus · Room TBA";
+          const description = "A day-long workshop on language generation in the limit.";
+          const tzid = "America/Los_Angeles";
+          const dtStart = "20260306T093000";
+          const dtEnd = "20260306T153000"; // Updated per request
 
-      function downloadICS() {
-        const ics = makeICS();
-        const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "Language-Generation-Day-2026.ics";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(url);
-      }
+          const now = new Date();
+          const stamp = [
+            now.getUTCFullYear(),
+            pad2(now.getUTCMonth() + 1),
+            pad2(now.getUTCDate()),
+            "T",
+            pad2(now.getUTCHours()),
+            pad2(now.getUTCMinutes()),
+            pad2(now.getUTCSeconds()),
+            "Z",
+          ].join("");
 
-      const calendarButtons = [
-        document.getElementById("cta-calendar-top"),
-        document.getElementById("cta-calendar-hero"),
-        document.getElementById("cta-calendar-drawer"),
-      ].filter(Boolean);
+          const uid = "lgd-20260306@stanford.edu";
+          const lines = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//Language Generation Day//Stanford//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:PUBLISH",
+            "BEGIN:VEVENT",
+            "UID:" + uid,
+            "DTSTAMP:" + stamp,
+            "SUMMARY:" + title,
+            "DESCRIPTION:" + description.replace(/\n/g, "\\n"),
+            "LOCATION:" + location,
+            "DTSTART;TZID=" + tzid + ":" + dtStart,
+            "DTEND;TZID=" + tzid + ":" + dtEnd,
+            "STATUS:TENTATIVE",
+            "END:VEVENT",
+            "END:VCALENDAR",
+          ];
+          return lines.join("\r\n");
+        }
 
-      calendarButtons.forEach(btn => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          downloadICS();
+        function downloadICS() {
+          const ics = makeICS();
+          const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "Language-Generation-Day-2026.ics";
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(url);
+        }
+
+        const calendarButtons = [
+          document.getElementById("cta-calendar-top"),
+          document.getElementById("cta-calendar-hero"),
+          document.getElementById("cta-calendar-drawer"),
+        ].filter(Boolean);
+
+        calendarButtons.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            downloadICS();
+          });
         });
-      });
 
-      // Contact email actions
-      const emails = [
-        "anaymehrotra1@gmail.com",
-        "saberi@stanford.edu",
-        "gvelegkas@google.com"
-      ]; 
+        // Contact email actions
+        const emails = ["anaymehrotra1@gmail.com", "saberi@stanford.edu", "gvelegkas@google.com"];
 
-      const copyBtn = document.getElementById("copyEmails");
-      if (copyBtn) {
-        copyBtn.addEventListener("click", async () => {
-          const text = emails.join(", ");
-          try {
-            await navigator.clipboard.writeText(text);
-            copyBtn.textContent = "Copied";
-            setTimeout(() => { copyBtn.textContent = "Copy emails"; }, 1200);
-          } catch (err) {
-            // Fallback
-            const ta = document.createElement("textarea");
-            ta.value = text;
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand("copy");
-            ta.remove();
-            copyBtn.textContent = "Copied";
-            setTimeout(() => { copyBtn.textContent = "Copy emails"; }, 1200);
-          }
-        });
-      }
+        const copyBtn = document.getElementById("copyEmails");
+        if (copyBtn) {
+          copyBtn.addEventListener("click", async () => {
+            const text = emails.join(", ");
+            try {
+              await navigator.clipboard.writeText(text);
+              copyBtn.textContent = "Copied";
+              setTimeout(() => {
+                copyBtn.textContent = "Copy emails";
+              }, 1200);
+            } catch (err) {
+              // Fallback
+              const ta = document.createElement("textarea");
+              ta.value = text;
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand("copy");
+              ta.remove();
+              copyBtn.textContent = "Copied";
+              setTimeout(() => {
+                copyBtn.textContent = "Copy emails";
+              }, 1200);
+            }
+          });
+        }
 
-      if (location.hash && document.querySelector(location.hash)) {
-        setTimeout(() => smoothScrollTo(location.hash), 0);
-      }
-    })();
-  </script>
-</body>
+        if (location.hash && document.querySelector(location.hash)) {
+          setTimeout(() => smoothScrollTo(location.hash), 0);
+        }
+      })();
+    </script>
+  </body>
 </html>
-
