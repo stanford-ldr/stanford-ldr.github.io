@@ -226,7 +226,10 @@ Signing up is a great way to (1) force yourself to engage with the content of th
       <tr>
         <td>2026-02-26</td>
         <td>Emergent Abilities 1: Grokking</td>
-        <td><a href="https://arxiv.org/abs/2301.05217">Paper 1</a> <a href="https://arxiv.org/abs/2402.15175">Paper 2</a></td>
+        <td>
+<a href="{{ '/assets/reform/26_02_2026_grokking_1.pdf' | relative_url }}">Slides 1</a>
+<a href="{{ '/assets/reform/26_02_2026_grokking_2.pdf' | relative_url }}">Slides 2</a>
+<a href="https://arxiv.org/abs/2301.05217">Paper 1</a> <a href="https://arxiv.org/abs/2402.15175">Paper 2</a></td>
       </tr>
     </tbody>
   </table>
